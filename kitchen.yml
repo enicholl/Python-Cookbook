@@ -1,0 +1,23 @@
+---
+driver:
+  name: vagrant
+
+
+
+provisioner:
+  name: chef_zero
+
+
+verifier:
+  name: inspec
+
+platforms:
+  - name: ubuntu/xenial64
+
+
+suites:
+  - name: default
+    verifier:
+      inspec_tests:
+        - test/integration/default
+    attributes:
