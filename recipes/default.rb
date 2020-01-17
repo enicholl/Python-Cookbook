@@ -23,7 +23,7 @@ remote_directory '/home/ubuntu/app' do
   action :create
 end
 execute 'install /home/ubuntu/app/requirements.txt' do
-  command 'pip3 install -r home/ubuntu/app/requirements.txt --user'
+  command 'pip3 install -r home/ubuntu/app/requirements.txt'
   action :run
 end
 directory '/home/vagrant/Downloads' do

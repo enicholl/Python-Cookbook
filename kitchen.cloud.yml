@@ -1,0 +1,32 @@
+driver:
+  name: ec2
+  region: eu-west-1
+  require_chef_omnibus: true
+  instance_type: t2.micro
+  # This is the subnet id for DevOpsStudents
+  subnet_id: subnet-0e9b6138ff1ce18f2
+  # Name of the DevOpsStudents key
+  aws_ssh_key_id: Engineering47TestKey
+  associate_public_ip: true
+
+transport:
+ # Use our key from machine to access the test machine
+  ssh_key: ~/.ssh/Engineering47TestKey.pem
+  user_name: ec2-user
+
+verifier:
+  name: inspec
+
+platforms:
+  - name: ubuntu-16.04
+    driver:
+     box: ubuntu/xenial64
+
+suites:
+  - name: default
+    run_list:
+      - recipe[node::default]
+    verifier:
+      inspec_tests:
+        - test/integration/default
+    attributes:
