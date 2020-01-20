@@ -17,7 +17,6 @@ updated application.
 In this file I shall go into more detail of the development and provisioning of the different stages throughout this project, mentioning any challenges I faced along the way.
 
 # Pre-requisites #
-what i needed already downloaded to begin the project
 Before beginning the project I downloaded the folder containing the IT Job Watch application. In addition to the application, the project required ChefDK, Python and Packer to be downloaded
 prior to beginning.
 
