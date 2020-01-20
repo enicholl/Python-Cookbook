@@ -41,8 +41,9 @@ To ensure that the cookbook would correctly provision the virtual environment, I
 tool would create a virtual machine, provision the machine and install the dependancies, and then run the integration tests to check the provisioning of the machine. Following that it would 
 destroy the machine. Initially when creating the integration tests I had very few issues, however when it came to testing the installation of the python packages using the requirements.txt file, 
 the test was failing. I am still working to resolve this issue and need to further investigate as the provisioning of the machine clearly shows the installlation of all 19 python packages, 
-but when they are used to execute commands they cannot be found. (All integration tests I used can be seen in the test/integration/default/default_test.rb file in the python cookbook
-repository)
+but when they are used to execute commands they cannot be found. *edit* I have since managed to resolve this issue as it was an error being caused by the machine not being destroyed completely. Since
+Restarting the system and ensuring the machine was destroyed and re-provisioned, all tests have run correctly and all commands successful. (All integration tests I used can be seen in the 
+test/integration/default/default_test.rb file in the python cookbook repository)
 
 ## Creating the IT Jobs Watch application folder ##
 The app folder was downloaded into a parent folder named IT Jobs watch, which also contained the vagrantfile, packer.json file and berksfile. 
